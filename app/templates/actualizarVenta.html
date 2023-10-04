@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../static/assets/css/Venta.css">
+    <title>Actualizar Venta</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--Iconos de la caja-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!--Navbar-->
+    <header>
+        <!--Nav Container-->
+        <div class="nav container">
+            <!--Menú Icon-->
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <!--Logo-->
+            <a href="/" class="logo">Luji<span>car's</span></a>
+            <!--Nav List-->
+            <ul class="navbar">
+                <li><a href="#Inicio" class="active">Inicio</a></li>
+                <li>
+                    <a href="#home">Gestionar Productos</a>
+                    <br>
+                    <ul class="menu-vertical">
+                        <li><a href="/Producto/registrarProducto">Registrar Producto</a></li>
+                        <li><a href="/Producto/consultarProducto">Consultar Producto</a></li>
+                        <li><a href="/Producto/consultarProducto">Actualizar Producto</a></li>
+                        <li><a href="/Producto/consultarProducto">Eliminar Producto</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#Nosotros">Gestionar Ventas</a>
+                    <br>
+                    <ul class="menu-vertical">
+                        <li><a href="/Venta/registrarVenta">Registrar Venta</a></li>
+                        <li><a href="/Venta/consultarVenta">Consultar Venta</a></li>
+                        <li><a href="/Venta/consultarVenta">Actualizar Venta</a></li>
+                        <li><a href="/Venta/consultarVenta">Eliminar Venta</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#Nosotros">Gestionar Usuario</a>
+                    <br>
+                    <ul class="menu-vertical">
+                        <li><a href="#">Consultar</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!--Buscador-->
+            <i id="search-icon"></i>
+        </div>
+    </header>
+    <!--Inicio-->
+    <section class="home" id="home">
+        <div class="home-text">
+            <h1><span>Bienvenido,</span> en esta <br>sección podrá <br><span> Actualizar</span> su<span> Venta</span></h1>
+        
+        </div>
+    </section>
+
+</section>
+<!--Contactenos container-->
+<section class="formulario" id="formulario">
+<form method="POST" action="/Venta/actualizarVenta/{{ venta.codigoVenta }}">
+    <h2>Actualizar Venta</h2>
+    <br> 
+    <div class="input-group">
+        <label>Código Venta</label>
+        <input type="number" name="codigoVentaActualizar" id="codigoVentaActualizar" value="{{ venta.codigoVenta }}" required readonly>
+
+        <label>Fecha Venta</label>
+        <input type="date" name="fechaActualizar" id="fechaActualizar" value="{{ venta.fechaVenta }}" placeholder=""required autofocus>
+
+        <label>Cantidad Venta</label>
+        <input type="number" name="cantidadActualizar" id="cantidadActualizar" value="{{ venta.cantidadVenta }}" placeholder=""required>
+
+        <label>Total Venta</label>
+        <input type="number" name="totalActualizar" id="totalActualizar" step="0.01" value="{{ venta.totalVenta }}"placeholder=""required>
+
+        <label>Código Cliente</label>
+        <input type="number" name="codigoProductoFKActualizar" id="codigoProductoFKActualizar" value="{{ venta.codigoProductoFK }}"placeholder=""required>
+        <br>
+        <br>
+
+        <input class="btn1" type="submit" value="Actualizar Venta">
+    </div>
+</form>
+</section>
+<br>
+<br>
+<br>
+    <!--Footer-->
+    <section class="footer">
+        <div class="footer-container container-1">
+            <div class="footer-box social">
+                <a href="/index" class="logo">Luji<span>car's</span></a>
+                 <a href="https://www.instagram.com/tienda_automotriz/?igshid=MzRlODBiNWFlZA%3D%3D"><i class='bx bxl-instagram'></i></a>
+            </div>
+            <div class="footer-box">
+                <h3>Página</h3>
+                <a href="/">Inicio</a>
+                <a href="/productos">Productos</a>
+                <a href="/nosotros">Nosotros</a>
+                <a href="/contactenos">Contáctenos</a>
+            </div>
+            <div class="footer-box">
+                <h3>Legal</h3>
+                <a href="#">Privacidad</a>
+                <a href="#">Cookies Política</a>
+            </div>
+        </div>
+    </section>
+    <!--Copyright-->
+    <div class="copyright">
+        <p>&#169; Lujicar's <span id="current-year">2023</span></p>
+    </div>
+    <!--Link deL JS-->
+    <script>
+        // Obtén el elemento del año actual del copyright
+        var yearElement = document.getElementById('current-year');
+    
+        // Obtiene el año actual
+        var currentYear = new Date().getFullYear();
+    
+        // Actualiza el contenido del elemento con el año actual
+        yearElement.textContent = currentYear;
+    </script>
+    <script src="../static/assets/js/main.js"></script>
+</body>
+</html>

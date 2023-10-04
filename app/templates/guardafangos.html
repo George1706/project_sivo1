@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lujicar's - Guardafangos</title>
+    <link rel="stylesheet" href="../static/assets/css/producto1.css">
+    <!--Iconos de la caja-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!--Navbar-->
+    <header>
+        <!--Nav Container-->
+        <div class="nav container">
+            <!--Menú Icon-->
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <!--Logo-->
+            <a href="/productos" class="logo">Luji<span>car's</span></a>
+            
+            <!--Box-->
+            <div class="search-box container">
+                <input type="search" name="" id="" placeholder="Busque Aqui su producto..">
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="contenedor">
+            <!-- Producto 1 -->
+            <div class="producto">
+                <img src="../static/assets/img/guardafangos1.webp" alt="Producto 1">
+                <h2>Guardafango Izq </h2>
+                <p>Guardafango Der O Izq Generica Honda Pilot 16/20</p>
+                <span class="precio">$69.900</span>
+                <button class="boton-comprar">AGREGAR AL CARRITO</button>
+            </div>
+            
+            <!-- Producto 2 -->
+            <div class="producto">
+                <img src="../static/assets/img/guardafangos2.webp" alt="Producto 2">
+                <h2>Salpicadera Guardafango</h2>
+                <p>Salpicadera Bmw 1200gs 1250gs Guardafango Lodera 1200 1250</p>
+                <span class="precio">$170.000</span>
+                <button class="boton-comprar">AGREGAR AL CARRITO</button>
+            </div>
+            
+            <!-- Producto 3 -->
+            <div class="producto">
+                <img src="../static/assets/img/guardafangos3.webp" alt="Producto 3">
+                <h2>Salpicadero Laterales </h2>
+                <p>Kit Par 2 Tolvas De Salpicadero Laterales Guardafango Izquierda Y Derecha</p>
+                <span class="precio">$29.99</span>
+                <button class="boton-comprar">AGREGAR AL CARRITO</button>
+            </div>
+
+            <div class="producto">
+                <img src="../static/assets/img/guardafangos4.webp" alt="Producto 1">
+                <h2>Lip Inferior Faldon </h2>
+                <p>Lip Inferior Faldon Facia Delantera Jetta Clasico 2008 -2015</p>
+                <span class="precio">$69.900</span>
+                <button class="boton-comprar">AGREGAR AL CARRITO</button>
+            </div>
+            
+            <!-- Producto 2 -->
+            <div class="producto">
+                <img src="../static/assets/img/guardafangos5.webp" alt="Producto 2">
+                <h2>Guardafango Delatero </h2>
+                <p>Tolva Guardafango Delatero Izquierdo Trax 13-16</p>
+                <span class="precio">$170.000</span>
+                <button class="boton-comprar">AGREGAR AL CARRITO</button>
+            </div>
+            
+            
+            
+        
+        </div>
+    </section>
+    <!--Footer-->
+    <section class="footer">
+        <div class="footer-container container-1">
+            <div class="footer-box social">
+                <a href="/index" class="logo">Luji<span>car's</span></a>
+                 <a href="https://www.instagram.com/tienda_automotriz/?igshid=MzRlODBiNWFlZA%3D%3D"><i class='bx bxl-instagram'></i></a>
+            </div>
+            <div class="footer-box">
+                <h3>Página</h3>
+                <a href="/">Inicio</a>
+                <a href="/productos">Productos</a>
+                <a href="/nosotros">Nosotros</a>
+                <a href="/contactenos">Contáctenos</a>
+            </div>
+            <div class="footer-box">
+                <h3>Legal</h3>
+                <a href="#">Privacidad</a>
+                <a href="#">Cookies Política</a>
+            </div>
+        </div>
+    </section>
+    <!--Copyright-->
+    <div class="copyright">
+        <p>&#169; Lujicar's <span id="current-year">2023</span></p>
+    </div>
+    <!--Link deL JS-->
+    <script>
+        // Obtén el elemento del año actual del copyright
+        var yearElement = document.getElementById('current-year');
+    
+        // Obtiene el año actual
+        var currentYear = new Date().getFullYear();
+    
+        // Actualiza el contenido del elemento con el año actual
+        yearElement.textContent = currentYear;
+    </script>
+    <script src="../static/assets/js/main.js"></script>
+</body>
+</html>

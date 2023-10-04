@@ -1,0 +1,74 @@
+<head>
+  <link rel="stylesheet" href="../../../static/assets/css/stylelogin.css">
+</head>
+
+<body>
+  <div class="container">
+        <div class="forms-container">
+          <div class="form-control signup-form">
+            <form method="POST" action="/registro">
+              <h2>Registrate!!!</h2>
+              <input type="text" placeholder="Nombre" id="Clie_Nombre" name="Clie_Nombre" required />
+              <input type="email" placeholder="Correo" id="Usua_Correo" name="Usua_Correo" required />
+              <input type="password" placeholder="Contraseña" id="Usua_Pass" name="Usua_Pass" required />
+              <input type="password" placeholder="Confirma la Contraseña"  />
+              <button>Registrate</button>
+            </form>
+            <span>Inicia sesión con</span>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <div id="error-alert" class="alert alert-danger alert-dismissible fade show" role="alert">
+              {{ messages[0][1] }}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          {% endif %}
+          {% endwith %}
+            <div class="socials">
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-google-plus-g"></i>
+              <i class="fab fa-linkedin-in"></i>
+            </div>
+          </div>
+          <div class="form-control signin-form">
+            <form method="POST">
+              <h2>Iniciar Sesion</h2>
+              <input type="text" placeholder="Correo" required name="correoUsuario" />
+              <input type="password" placeholder="Contraseña" required name="claveUsuario" />
+              <input type="submit" class="boton" value="Iniciar Sesión">
+            </form>
+            <span>Inicia sesión con</span>
+            <div class="socials">
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-google-plus-g"></i>
+              <i class="fab fa-linkedin-in"></i>
+            </div>
+          </div>
+        </div>
+        <div class="intros-container">
+          <div class="intro-control signin-intro">
+            <div class="intro-control__inner">
+              <h2>Bienvenido!</h2>
+              <p>
+                Te invitamos a unirte a nuestro sistema de información.
+              </p>
+              <a href="/usuario/registro"><button id="signup-btn">No tienes una cuenta? Registrate.</button></a>
+            </div>
+          </div>
+          <div class="intro-control signup-intro">
+            <div class="intro-control__inner">
+              <h2>Hola de Nuevo!</h2>
+              <p>
+                Estamos emocionados que hagas parte de nuestro servicio de información.
+              </p>
+              <button id="signin-btn">Ya tienes una cuenta? Inicia Sesion.</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script src="../../../static/js/script_login.js"></script>
+
+  </body>
+</html>

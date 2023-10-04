@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Producto</title>
+    <link rel="stylesheet" href="../../../static/assets/css/Producto.css">
+    <!--Iconos de la caja-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+    <!--Navbar-->
+    <header>
+        <!--Nav Container-->
+        <div class="nav container">
+            <!--Menú Icon-->
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <!--Logo-->
+            <a href="/" class="logo">Luji<span>car's</span></a>
+            <!--Nav List-->
+            <ul class="navbar">
+                <li><a href="#Inicio" class="active">Inicio</a></li>
+                <li>
+                    <a href="#home">Gestionar Productos</a>
+                    <br>
+                    <ul class="menu-vertical">
+                        <li><a href="/Producto/registrarProducto">Registrar Producto</a></li>
+                        <li><a href="/Producto/consultarProducto">Consultar Producto</a></li>
+                        <li><a href="/Producto/consultarProducto">Actualizar Producto</a></li>
+                        <li><a href="/Producto/consultarProducto">Eliminar Producto</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#Nosotros">Gestionar Ventas</a>
+                    <br>
+                    <ul class="menu-vertical">
+                        <li><a href="/Venta/registrarVenta">Registrar Venta</a></li>
+                        <li><a href="/Venta/consultarVenta">Consultar Venta</a></li>
+                        <li><a href="/Venta/consultarVenta">Actualizar Venta</a></li>
+                        <li><a href="/Venta/consultarVenta">Eliminar Venta</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#Nosotros">Gestionar Usuario</a>
+                    <br>
+                    <ul class="menu-vertical">
+                        <li><a href="#">Consultar</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!--Buscador-->
+            <i id="search-icon"></i>
+        </div>
+    </header>
+    <!--Inicio-->
+    <section class="home" id="home">
+        <div class="home-text">
+            <h1><span>Bienvenido,</span> en esta <br>sección podrá <br><span> Consultar</span> sus<span>
+                    Productos.</span></h1>
+        </div>
+    </section>
+    <br>
+    <br>
+    <center>
+        <div>
+            <h1>CONSULTAR PRODUCTO</h1>
+            <br>
+            <br>
+            <br>
+        
+        </div>
+        </center>
+<center>
+    <div>
+        <table>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre Producto</th>
+                    <th>Precio Venta Producto</th>
+                    <th>Unidad Medida Producto</th>
+                    <th>Stock Producto</th>
+                    <th>Descripcion Producto</th>
+                    <th>Botones</th>
+                </tr>
+                {% for producto in producto %}
+                <tr>
+                    <td>{{ producto.codigoProducto }}</td>
+                    <td>{{ producto.nombreProducto }}</td>
+                    <td>{{ producto.precioVentaProducto }}</td>
+                    <td>{{ producto.unidadMedidaProducto }}</td>
+                    <td>{{ producto.stockProducto }}</td>
+                    <td>{{ producto.descripcionProducto }}</td>
+                    <td>
+                        <a href="/Producto/actualizarProducto/{{ producto.codigoProducto}}">Actualizar</a>
+                        <a href="/Producto/eliminarProducto/{{ producto.codigoProducto }}">Eliminar</a>
+
+                    </td>
+                </tr>
+                {% endfor %}
+        </table>
+    </div>
+</center>
+    <!--Footer-->
+    <section class="footer">
+        <div class="footer-container container-1">
+            <div class="footer-box social">
+                <a href="/index" class="logo">Luji<span>car's</span></a>
+                 <a href="https://www.instagram.com/tienda_automotriz/?igshid=MzRlODBiNWFlZA%3D%3D"><i class='bx bxl-instagram'></i></a>
+            </div>
+            <div class="footer-box">
+                <h3>Página</h3>
+                <a href="/">Inicio</a>
+                <a href="/productos">Productos</a>
+                <a href="/nosotros">Nosotros</a>
+                <a href="/contactenos">Contáctenos</a>
+            </div>
+            <div class="footer-box">
+                <h3>Legal</h3>
+                <a href="#">Privacidad</a>
+                <a href="#">Cookies Política</a>
+            </div>
+        </div>
+    </section>
+    <!--Copyright-->
+    <div class="copyright">
+        <p>&#169; Lujicar's <span id="current-year">2023</span></p>
+    </div>
+    <!--Link deL JS-->
+    <script>
+        // Obtén el elemento del año actual del copyright
+        var yearElement = document.getElementById('current-year');
+    
+        // Obtiene el año actual
+        var currentYear = new Date().getFullYear();
+    
+        // Actualiza el contenido del elemento con el año actual
+        yearElement.textContent = currentYear;
+    </script>
+    <script src="../static/assets/js/main.js"></script>
+
+</body>
+
+</html>

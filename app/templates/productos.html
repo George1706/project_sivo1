@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lujicar's</title>
+    <link rel="stylesheet" href="../static/assets/css/Index.css">
+
+    <!--Iconos de la caja-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!--Navbar-->
+    <header>
+        <!--Nav Container-->
+        <div class="nav container">
+            <!--Menú Icon-->
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <!--Logo-->
+            <a href="/" class="logo">Luji<span>car's</span></a>
+            <!--Nav List-->
+            <ul class="navbar">
+                <li><a href="/" class="active">Inicio</a></li>
+                <li><a href="/productos">Productos</a></li>
+                <li><a href="/nosotros">Nosotros</a></li>
+                <li><a href="/contactenos">Contactenos</a></li>
+            </ul>
+            <!--Buscador-->
+            <i class='bx bx-search' id="search-icon"></i>
+            <!--Box-->
+            <div class="search-box container">
+                <input type="search" name="" id="" placeholder="Busque Aqui su producto..">
+            </div>
+        </div>
+    </header>
+    <section class="cars" id="cars">
+        <div class="heading">
+            <span>Tipos Autopartes</span>
+            <h2>Diferentes autopartes que tenemos</h2>
+            <p>Pueden visualizar la variedad de autopartes que tenemos y las diferentes marcas </p>
+        </div>
+        <!--Container de cars-->
+        <div class="cars-container container">
+        <!--Box 1-->
+        <div class="box">
+            <a href="/farolas"><img src="../static/assets/img/luces.jpg" alt=""></a>
+            <h2>Farolas</h2>
+        </div>
+    
+        <!--Box 2-->
+        <div class="box">
+            <a href="/espejos"><img src="../static/assets/img/espejos.webp" alt=""></a>
+            <h2>Espejos</h2>
+        </div>
+    
+        <!--Box 3-->
+        <div class="box">
+            <a href="/puertas"><img src="../static/assets/img/puertas.jpg" alt=""></a>
+            <h2>Puertas</h2>
+        </div>
+    
+        <!--Box 4-->
+        <div class="box">
+            <a href="/guardafangos"><img src="../static/assets/img/guardafangos.jpg" alt=""></a>
+            <h2>Guardafangos</h2>
+        </div>
+            <!--Box 5-->
+            <div class="box">
+            <a href="/forros"><img src="../static/assets/img/sillas.jpeg" alt=""></a>
+            <h2>Forro para sillas</h2>
+        </div>
+            <!--Box 6-->
+        <div class="box">
+            <a href="/radiadores"><img src="../static/assets/img/radiador.jpg" alt=""></a>
+            <h2>Radiador</h2>
+        </div>
+    </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!--Footer-->
+    <section class="footer">
+        <div class="footer-container container-1">
+            <div class="footer-box social">
+                <a href="/index" class="logo">Luji<span>car's</span></a>
+                 <a href="https://www.instagram.com/tienda_automotriz/?igshid=MzRlODBiNWFlZA%3D%3D"><i class='bx bxl-instagram'></i></a>
+            </div>
+            <div class="footer-box">
+                <h3>Página</h3>
+                <a href="/">Inicio</a>
+                <a href="/productos">Productos</a>
+                <a href="/nosotros">Nosotros</a>
+                <a href="/contactenos">Contáctenos</a>
+            </div>
+            <div class="footer-box">
+                <h3>Legal</h3>
+                <a href="#">Privacidad</a>
+                <a href="#">Cookies Política</a>
+            </div>
+        </div>
+    </section>
+    <!--Copyright-->
+    <div class="copyright">
+        <p>&#169; Lujicar's <span id="current-year">2023</span></p>
+    </div>
+    <!--Link deL JS-->
+    <script>
+        // Obtén el elemento del año actual del copyright
+        var yearElement = document.getElementById('current-year');
+    
+        // Obtiene el año actual
+        var currentYear = new Date().getFullYear();
+    
+        // Actualiza el contenido del elemento con el año actual
+        yearElement.textContent = currentYear;
+    </script>
+    <script src="../static/assets/js/main.js"></script>
+</body>
+</html>

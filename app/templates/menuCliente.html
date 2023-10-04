@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Cliente</title>
+    <link rel="stylesheet" href="../static/assets/css/menuCliente.css">
+    <!--Iconos de la caja-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <!--Navbar-->
+    <header>
+        <!--Nav Container-->
+        <div class="nav-1 container-1">
+            <!--Menú Icon-->
+            <i class='bx-1 bx-menu' id="menu-icon-1"></i>
+            <!--Logo-->
+            <a href="/index" class="logo-1">Luji<span>car's</span></a>
+            <!--Nav List-->
+            <ul class="navbar-1">
+                <li><a href="/menuCliente" class="active">Inicio</a></li>
+                <li>
+                    <a href="#home">Gestionar Productos</a>
+                    <br>
+                    <ul class="menu-vertical-1">
+                        <li><a href="/consultarProducto">Consultar Producto</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#Nosotros">Gestionar Ventas</a>
+                    <br>
+                    <ul class="menu-vertical-1">
+                        <li><a href="/registrarVenta">Registrar Venta</a></li>
+                        <li><a href="/consultarVenta">Consultar Venta</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#Nosotros">Gestionar Usuario</a>
+                    <br>
+                    <ul class="menu-vertical-1">
+                        <li><a href="#">Consultar</a></li>
+                    </ul>
+                </li>
+                <li class="menu-vertical-1">
+                        <li><a href="/verProducto">Ver Más</a></li>
+                </li>
+                <li><a href="/usuario/logout" class="active">Cerrar Sesion</a></li>
+            </ul>
+            <!--Buscador-->
+            <i id="search-icon"></i>
+        </div>
+    </header>
+
+
+    <section class="container hidden" id="profileSection" style="margin-top: 20px;">
+        <div class="container__cards">
+            <div class="card">
+                <!-- Contenido del perfil aquí -->
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <div class="container__cards">
+            <div class="card">
+                <div class="cover__card">
+                    <img src="../../../static/assets/img/78-786293_1240-x-1240-0-avatar-profile-icon-png.png" alt="">
+                </div>
+                <h2>TU PERFIL</h2>
+                <hr>
+                <div class="footer__card">
+                    <h3 class="user__name">NÚMERO DE IDENTIFICACIÓN</h3>
+                    <i>01</i>
+                    <h3 class="user__name">NOMBRE</h3>
+                    <i>Samanta Duran</i>
+                    <h3 class="user__name">APELLIDO</h3>
+                    <i>Lopez Hurtado</i>
+                    <h3 class="user__name">TELÉFONO</h3>
+                    <i>3209850129</i>
+                    <h3 class="user__name">CORREO</h3>
+                    <i>Sami456@gmail.com</i>
+                    <button class="btn1">EDITAR</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="contenedor">
+            <!-- Producto 1 -->
+            <div class="contenedor__producto">
+                <div class="producto">
+                    <div class="cover__producto">
+                        <img src="../../../static/assets/img/A010308-300x300.png" alt="Producto 1">
+                        <h2>Equipo para taller</h2>
+                        <p>herramientas variadas, desde llaves y destornilladores</p>
+                        <span class="precio">$69.900</span>
+                        <button class="boton-comprar">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="contenedor__producto">
+                <div class="producto">
+                    <div class="cover__producto">
+                        <img src="../../../static/assets/img/faro-adicional-A004764-300x300.png" alt="Producto 2">
+                        <h2>Iluminacion automotriz</h2>
+                        <p>Faro Delanteros Led Osun </p>
+                        <span class="precio">$170.000</span>
+                        <button class="boton-comprar">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="contenedor__producto">
+                <div class="producto">
+                    <div class="cover__producto">
+                        <img src="../../../static/assets/img/A115997-300x300.png" alt="Producto 3">
+                        <h2>Sistema de frenos</h2>
+                        <p>Descripción del producto 3.</p>
+                        <span class="precio">$29.99</span>
+                        <button class="boton-comprar">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="contenedor__producto">
+                <div class="producto">
+                    <div class="cover__producto">
+                        <img src="../../../static/assets/img/A009827-300x300.jpg" alt="Producto 4">
+                        <h2>Aceites</h2>
+                        <p>Descripción del producto 4.</p>
+                        <span class="precio">$39.99</span>
+                        <button class="boton-comprar">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="contenedor__producto">
+                <div class="producto">
+                    <div class="cover__producto">
+                        <img src="../../../static/assets/img/a010717_stark-300x300.png" alt="Producto 5">
+                        <h2>Bateria</h2>
+                        <p>Descripción del producto 5.</p>
+                        <span class="precio">$49.99</span>
+                        <button class="boton-comprar">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 6 -->
+            <div class="contenedor__producto">
+                <div class="producto">
+                    <div class="cover__producto">
+                        <img src="../../../static/assets/img/A008222-300x300.png" alt="Producto 6">
+                        <h2>CINTA DE AISLAR</h2>
+                        <p>Descripción del producto 6.</p>
+                        <span class="precio">$59.99</span>
+                        <button class="boton-comprar">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="contenedor__producto">
+                <div class="producto">
+                    <div class="cover__producto">
+                        <img src="../../../static/assets/img/12-Volt-150-PSI-Inflator-wRaft-Nozzle-AF010800-300x300.png"
+                            alt="Producto 3">
+                        <h2>Inflador Automatico</h2>
+                        <p>Descripción del producto 7.</p>
+                        <span class="precio">$29.99</span>
+                        <button class="boton-comprar">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="contenedor__producto">
+                <div class="producto">
+                    <div class="cover__producto">
+                        <img src="../../../static/assets/img/A012749.png" alt="Producto 4">
+                        <h2>Filtro de aceite</h2>
+                        <p>Descripción del producto 4.</p>
+                        <span class="precio">$39.99</span>
+                        <button class="boton-comprar">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="contenedor__producto">
+                <div class="producto">
+                    <div class="cover__producto">
+                        <img src="../../../static/assets/img/A000937-300x300.png" alt="Producto 5">
+                        <h2>Inyector</h2>
+                        <p>Descripción del producto 5.</p>
+                        <span class="precio">$49.99</span>
+                        <button class="boton-comprar">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Footer-->
+    <section class="footer">
+        <div class="footer-container container-1">
+            <div class="footer-box social">
+                <a href="/index" class="logo">Luji<span>car's</span></a>
+                 <a href="https://www.instagram.com/tienda_automotriz/?igshid=MzRlODBiNWFlZA%3D%3D"><i class='bx bxl-instagram'></i></a>
+            </div>
+            <div class="footer-box">
+                <h3>Página</h3>
+                <a href="/">Inicio</a>
+                <a href="/productos">Productos</a>
+                <a href="/nosotros">Nosotros</a>
+                <a href="/contactenos">Contáctenos</a>
+            </div>
+            <div class="footer-box">
+                <h3>Legal</h3>
+                <a href="#">Privacidad</a>
+                <a href="#">Cookies Política</a>
+            </div>
+        </div>
+    </section>
+    <!--Copyright-->
+    <div class="copyright">
+        <p>&#169; Lujicar's <span id="current-year">2023</span></p>
+    </div>
+    <!--Link deL JS-->
+    <script>
+        // Obtén el elemento del año actual del copyright
+        var yearElement = document.getElementById('current-year');
+    
+        // Obtiene el año actual
+        var currentYear = new Date().getFullYear();
+    
+        // Actualiza el contenido del elemento con el año actual
+        yearElement.textContent = currentYear;
+    </script>
+    <script src="../static/assets/js/main.js"></script>
+</body>
+
+</html>
