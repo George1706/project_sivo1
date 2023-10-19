@@ -1,5 +1,5 @@
 #Dependencia de flask
-from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask import Flask, render_template, request, redirect, url_for, session, flash,jsonify
 from flask_login import LoginManager
 #Dependencia de configuración
 from .config import Config
@@ -27,7 +27,8 @@ from app.usuarios import usuario_blueprint
 #Vincular submodulos del proyecto
 app.register_blueprint(cliente_blueprint)
 app.register_blueprint(usuario_blueprint)
-
+from app.administrador import adminsitrador_blueprint
+app.register_blueprint(adminsitrador_blueprint)
 
 #Crear el objetto de Moldelos
 db = SQLAlchemy(app)
@@ -83,3 +84,4 @@ def load_user(user_id):
         return Usuario.query.get(int(user_id))
     except Exception as e:
         return None 
+    

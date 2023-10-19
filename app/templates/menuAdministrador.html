@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../static/assets/css/menuAdministrador.css">
     <title>Menú Administrador</title>
+    <link rel="stylesheet" href="../static/assets/css/menuAdministrador.css">
+    <!--Iconos de la caja-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
     <!--Navbar-->
     <header>
@@ -15,66 +18,110 @@
             <!--Menú Icon-->
             <i class='bx-1 bx-menu' id="menu-icon-1"></i>
             <!--Logo-->
-            <a href="#" class="logo-1">Luji<span>car's</span></a>
+            <a href="/index" class="logo-1">Luji<span>car's</span></a>
             <!--Nav List-->
             <ul class="navbar-1">
-                <li><a href="/menuAdministrador" class="active">Inicio</a></li>
-            </ul>
-            <ul class="navbar-1">
+                <li><a href="/menuCliente" class="active">Inicio</a></li>
+                <li>
+                    <a href="#home">Gestionar Productos</a>
+                    <br>
+                    <ul class="menu-vertical-1">
+                        <li><a href="/consultarProducto">Consultar Producto</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#Nosotros">Gestionar Ventas</a>
+                    <br>
+                    <ul class="menu-vertical-1">
+                        <li><a href="/registrarVenta">Registrar Venta</a></li>
+                        <li><a href="/consultarVenta">Consultar Venta</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#Nosotros">Gestionar Usuario</a>
+                    <br>
+                    <ul class="menu-vertical-1">
+                        <li><a href="#">Consultar</a></li>
+                    </ul>
+                </li>
                 <li><a href="/usuario/logout" class="active">Cerrar Sesion</a></li>
             </ul>
-  
             <!--Buscador-->
             <i id="search-icon"></i>
         </div>
     </header>
-</section>
-    <div class="cotainer">
-    <div class="container__cards">
-        <div class="card">
-            <div class="cover__card">
-                <img src="../../../static/assets/img/78-786293_1240-x-1240-0-avatar-profile-icon-png.png" alt="">
-            </div>
-            <h2>Administador Daniel</h2>
-            <hr>
-            <div class="footer__card">
-                <h3 class="user__name">ID ADMIN</h3>
-                <i>01</i>
-                <h3 class="user__name">Nombre</h3>
-                <i>Daniel Stiven</i>
-                <h3 class="user__name">Apellido</h3>
-                <i>Lopez Hurtado</i>
-                <h3 class="user__name">Telefono</h3>
-                <i>3209850129</i>
-                <h3 class="user__name">Dirección</h3>
-                <i>Calle 128bis #95-40</i>
-                <h3 class="user__name">Número de Identicificación</h3>
-                <i>109283874</i>
+
+    <form action="/Administrador/actualizarAdministrador/{{ usuario.codigoUsuario }}" class="container" method="POST">
+
+        <div class="container__cards">
+            <div class="card">
+                <div class="cover__card">
+                    <img src="../../../static/assets/img/78-786293_1240-x-1240-0-avatar-profile-icon-png.png" alt="">
+                </div>
+                <h2>TU PERFIL</h2>
+                <hr>
+                <div class="footer__card">
+                    <label><h3 class="user__name">CÓDIGO ADMINISTRADOR</h3></label>
+                    <input name="codigoUsuarioActualizar" id="codigoUsuarioActualizar" value="{{ usuario.codigoUsuario }}"/>
+                    <i id="codigoUsuario">01</i>
+
+                    <label><h3 class="user__name">NOMBRE COMPLETO</h3></label>
+                    <input name="nombreUsuarioActualizar" id="nombreUsuarioActualizar" value="{{ usuario.nombreUsuario }}"/>
+                    <span class="edit-icon" id="nombreUsuario" onclick="habilitarEdicion('nombreUsuario')">✏️</span>
+
+                    <label><h3 class="user__name">CORREO</h3></label>
+                    <input name="correoUsuarioActualizar" id="correoUsuarioActualizar" value="{{ usuario.correoUsuario }}"/>
+                    <span class="edit-icon" id="correoUsuario" onclick="habilitarEdicion('correoUsuario')">✏️</span>
+
+                    <br>
+                    <br>
+                    <button class="btn" id="guardarCambios" style="align-items: center;"
+                        onclick="guardarCambios()">Guardar Cambios</button>
+
+                </div>
             </div>
         </div>
-    </div>
-    
-    <a href="../Producto/registrarProducto.html"><button class="btn1">Registrar Producto</button></a>
-    
-    <a href="../Producto/consultarProducto.html"><button class="btn1">Consultar Producto</button></a>
-    
-    <a href="../Producto/actualizarProducto.html"><button class="btn1">Modificar Producto</button></a>
-    
-    <a href="/consultarProducto"><button class="btn1">Eliminar Producto</button></a>
-    
-    <a href="/registrarVenta"><button class="btn1">Gestionar Venta</button></a>
-    
-    <a href="#"><button class="btn1">Consultar Usuario</button></a>
 
-</div>
+    </form>
 
-<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
     <!--Footer-->
     <section class="footer">
-        <div class="footer-container container">
+        <div class="footer-container container-1">
             <div class="footer-box social">
                 <a href="/index" class="logo">Luji<span>car's</span></a>
-                 <a href="https://www.instagram.com/tienda_automotriz/?igshid=MzRlODBiNWFlZA%3D%3D"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.instagram.com/tienda_automotriz/?igshid=MzRlODBiNWFlZA%3D%3D"><i
+                        class='bx bxl-instagram'></i></a>
             </div>
             <div class="footer-box">
                 <h3>Página</h3>
@@ -98,13 +145,77 @@
     <script>
         // Obtén el elemento del año actual del copyright
         var yearElement = document.getElementById('current-year');
-    
+
         // Obtiene el año actual
         var currentYear = new Date().getFullYear();
-    
+
         // Actualiza el contenido del elemento con el año actual
         yearElement.textContent = currentYear;
     </script>
+
+    <script>
+        function habilitarEdicion(idCampo) {
+            const campo = document.getElementById(idCampo);
+            campo.contentEditable = true;
+            campo.style.border = "1px solid #000";
+        }
+
+        function guardarCambios() {
+            const idAdmin = document.getElementById('idAdmin').textContent;
+            const nombreAdmin = document.getElementById('nombreAdmin').textContent;
+            const correoAdmin = document.getElementById('correoAdmin').textContent;
+
+            // Aquí debes enviar los datos al servidor para guardarlos en la base de datos
+            // Puedes usar AJAX, fetch, o alguna biblioteca para hacer la solicitud al servidor
+
+            // Ejemplo de cómo enviar los datos usando fetch:
+            fetch('/guardarCambios', {
+                method: 'POST',
+                body: JSON.stringify({
+                    idAdmin,
+                    nombreAdmin,
+                    correoAdmin
+                    // Agrega otros campos según sea necesario
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // Aquí puedes manejar la respuesta del servidor
+                    console.log('Datos guardados con éxito:', data);
+                })
+                .catch(error => {
+                    console.error('Error al guardar los datos:', error);
+                });
+        }
+    </script>
+
+    <script>
+        // Obtén los datos del administrador del servidor y llénalos en los campos del perfil
+        function obtenerDatosAdmin() {
+            fetch('/obtenerDatosAdmin') // Debes crear esta ruta en tu servidor
+                .then(response => response.json())
+                .then(data => {
+                    const idAdmin = document.getElementById('idAdmin');
+                    const nombreAdmin = document.getElementById('nombreAdmin');
+                    const correoAdmin = document.getElementById('correoAdmin');
+
+                    idAdmin.textContent = data.idAdmin; // Asegúrate de que los nombres de las propiedades coincidan con los datos del servidor
+                    nombreAdmin.textContent = data.nombreAdmin;
+                    correoAdmin.textContent = data.correoAdmin;
+                    // Puedes agregar otros campos aquí y ajustar la respuesta del servidor en consecuencia
+                })
+                .catch(error => {
+                    console.error('Error al obtener datos del administrador:', error);
+                });
+        }
+
+        // Llama a la función para cargar los datos del administrador cuando la página se carga
+        window.onload = obtenerDatosAdmin;
+    </script>
     <script src="../static/assets/js/main.js"></script>
 </body>
+
 </html>
