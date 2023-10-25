@@ -27,8 +27,7 @@ from app.usuarios import usuario_blueprint
 #Vincular submodulos del proyecto
 app.register_blueprint(cliente_blueprint)
 app.register_blueprint(usuario_blueprint)
-from app.administrador import adminsitrador_blueprint
-app.register_blueprint(adminsitrador_blueprint)
+
 
 #Crear el objetto de Moldelos
 db = SQLAlchemy(app)

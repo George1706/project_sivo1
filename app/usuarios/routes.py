@@ -68,3 +68,4 @@ def dashboard():
         return render_template('menuCliente.html')
     else:
         return "Rol no válido para el dashboard"
+
