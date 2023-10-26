@@ -33,6 +33,28 @@ def registro():
 
     return render_template('register.html')
 
+@usuario_blueprint.route('/registroAdmin', methods=['GET', 'POST'])
+def registroAdmin():
+    if request.method == 'POST':
+        nombreUsuario = request.form['nombreUsuario']
+        correoUsuario = request.form['correoUsuario']
+        claveUsuario = request.form['contrasenaUsuario']
+
+        # Verificar si el correo ya está en uso
+        usuario_existente = app.models.Usuario.query.filter_by(correoUsuario=correoUsuario).first()
+
+        if usuario_existente:
+            flash('El correo electrónico ya está registrado. Por favor, utiliza otro correo.', 'danger')
+        else:
+            nuevo_usuario = app.models.Usuario(nombreUsuario=nombreUsuario,correoUsuario=correoUsuario,claveUsuario=claveUsuario,  rol_id=1)
+            app.db.session.add(nuevo_usuario)
+            app.db.session.commit()
+           
+
+        
+
+    return render_template('adminRegister.html')
+
 #METODO PARA CERRAR SESION
 
 @usuario_blueprint.route('/logout')

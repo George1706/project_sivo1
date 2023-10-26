@@ -15,51 +15,12 @@
             <!--Menú Icon-->
             <i class='bx bx-menu' id="menu-icon"></i>
             <!--Logo-->
-            <a href="/index" class="logo">Luji<span>car's</span></a>
-            <!--Nav List-->
-            <ul class="navbar">
-                <li><a href="#Inicio" class="active">Inicio</a></li>
-                <li>
-                    <a href="#home">Gestionar Productos</a>
-                    <br>
-                    <ul class="menu-vertical">
-                        <li><a href="/Producto/registrarProducto">Registrar Producto</a></li>
-                        <li><a href="/Producto/consultarProducto">Consultar Producto</a></li>
-                        <li><a href="/Producto/consultarProducto">Actualizar Producto</a></li>
-                        <li><a href="/Producto/consultarProducto">Eliminar Producto</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#Nosotros">Gestionar Ventas</a>
-                    <br>
-                    <ul class="menu-vertical">
-                        <li><a href="/Venta/registrarVenta">Registrar Venta</a></li>
-                        <li><a href="/Venta/consultarVenta">Consultar Venta</a></li>
-                        <li><a href="/Venta/consultarVenta">Actualizar Venta</a></li>
-                        <li><a href="/Venta/consultarVenta">Eliminar Venta</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#Nosotros">Gestionar Usuario</a>
-                    <br>
-                    <ul class="menu-vertical">
-                        <li><a href="#">Consultar</a></li>
-                    </ul>
-                </li>
-            </ul>
+            <a href="/usuario/login" class="logo">Luji<span>car's</span></a>
+
             <!--Buscador-->
             <i id="search-icon"></i>
         </div>
     </header>
-    <!--Inicio-->
-    <section class="home" id="home">
-        <div class="home-text">
-            <h1><span>Bienvenido,</span> en esta <br>sección podrá <br><span> Registrar</span> un<span> Usuario</span></h1>
-        
-        </div>
-    </section>
-
-</section>
 {% with messages = get_flashed_messages() %}
         {% if messages %}
             <ul>
@@ -72,15 +33,15 @@
 <!--Contactenos container-->
 <section class="formulario" id="formulario">
 <form method="POST" action="{{ url_for('usuario_blueprint.registro') }}">
-    <h2>Registrar Usuario</h2>
+    <h2>Registrar Cliente</h2>
     <br>
     <div class="input-group">
         
-        <label>Nombre Usuario</label>
+        <label>Nombre Cliente</label>
         <input type="text" name="nombreUsuario" placeholder="" required>
 
        
-        <label>Correo Usuario</label>
+        <label>Correo Cliente</label>
         <input type="email" name="correoUsuario" placeholder="" required>
 
         <label>Contraseña</label>
@@ -89,7 +50,7 @@
         <br>
         <br>
 
-        <input class="btn1" type="submit" value="Registrar ">
+        <input class="btn1" type="submit" value="Registrarse">
     </div>
 </form>
 </section>

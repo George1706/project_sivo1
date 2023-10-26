@@ -72,6 +72,14 @@ def forros():
 def radiadores():
     return render_template('radiadores.html' )
 
+@app.route('/terminos')
+def terminos():
+    return render_template('terminosCondiciones.html' )
+
+@app.route('/politica')
+def politica():
+    return render_template('politicas_de privacidad.html' )
+
 
 #importar los modelos  de .models
 from .models import Producto,Usuario,Cliente,Venta,Administrador
