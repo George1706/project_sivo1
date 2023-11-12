@@ -615,5 +615,84 @@ input::placeholder, textarea::placeholder{
         display: contents;
     }
 }
+.form-txt a{
+    color: var(--main-color);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
 
+/* Venta.css */
+.tabla-ventas {
+    border-collapse: collapse;
+    width: 100%;
+}
 
+.tabla-ventas th, .tabla-ventas td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.tabla-ventas tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tabla-ventas th {
+    background-color: #af4c4c;
+    color: white;
+}
+
+/* Estilos para el encabezado de la tabla */
+.tabla-ventas th {
+    background-color: #ff4848;
+    color: white;
+    font-weight: bold;
+}
+
+/* Estilos para las filas impares de la tabla */
+.tabla-ventas tr:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+
+/* Estilos para las filas pares de la tabla */
+.tabla-ventas tr:nth-child(even) {
+    background-color: #ffffff;
+}
+/* Estilos para los botones de actualización y eliminación */
+.tabla-ventas td a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #007bff;
+    border-radius: 3px;
+    font-weight: bold;
+
+}
+
+.tabla-ventas td a:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para los botones de eliminación */
+.tabla-ventas td a.eliminar {
+    background-color: #ff0000; /* Rojo */
+    border: 1px solid #ff0000; /* Borde rojo */
+}
+
+.tabla-ventas td a.eliminar:hover {
+    background-color: #d60000; /* Color de fondo más oscuro al pasar el mouse */
+}
+
+/* Agrega estas reglas CSS en tu archivo CSS */
+.tabla-container {
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 1000px; /* Cambia el valor a un ancho más grande, por ejemplo, 1000px */
+    margin: 0 auto;
+}

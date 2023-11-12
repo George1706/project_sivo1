@@ -79,7 +79,9 @@ def terminos():
 @app.route('/politica')
 def politica():
     return render_template('politicas_de privacidad.html' )
-
+@app.route('/menuCliente')
+def menuCliente():
+    return render_template('menuCliente.html' )
 
 #importar los modelos  de .models
 from .models import Producto,Usuario,Cliente,Venta,Administrador

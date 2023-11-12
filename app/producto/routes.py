@@ -1,4 +1,4 @@
-from flask import redirect, render_template, request
+from flask import redirect, render_template, request, flash
 from sqlalchemy import null
 import app
 #from app.models import producto
@@ -22,9 +22,12 @@ def registrar_producto():
         producto = app.models.Producto(nombreProducto=nombreProducto, precioVentaProducto=precioVentaProducto,
                             unidadMedidaProducto=unidadMedidaProducto, stockProducto=stockProducto, 
                             descripcionProducto = descripcionProducto)
-        
+
         app.db.session.add(producto)
         app.db.session.commit()
+        # Mensaje de registro exitoso
+        flash('Producto registrado correctamente', 'success')
+
         return redirect('/Producto/consultarProducto')
 
     return render_template('registrarProducto.html')
@@ -43,7 +46,8 @@ def actualizar_producto(id):
         producto.descripcionProducto = request.form['descripcionActualizar']
         
         app.db.session.commit()
-        
+        # Mensaje de actualizado exitoso
+        flash(f'Producto con id:{producto.codigoProducto} actualizado correctamente', 'success')
         return redirect('/Producto/consultarProducto')
     
     return render_template('actualizarProducto.html', producto=producto)
@@ -57,5 +61,5 @@ def eliminar_producto(id):
     if producto:
         app.db.session.delete(producto)
         app.db.session.commit()
-    
+        flash(f'Producto con id:{producto.codigoProducto} actualizado correctamente', 'success')
     return redirect('/Producto/consultarProducto')

@@ -20,17 +20,25 @@
             <!--Buscador-->
             <i id="search-icon"></i>
         </div>
+        <div>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                    <li style="color: red; background-color: rgb(192, 255, 175); padding: 3%; text-align: center;">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% endwith %}
+        </div>
     </header>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-{% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <ul>
-                {% for message in messages %}
-                    <li style="color: red;">{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-        {% endwith %}
 <!--Contactenos container-->
 <section class="formulario" id="formulario">
 <form method="POST" action="{{ url_for('usuario_blueprint.registroAdmin') }}">
@@ -52,6 +60,9 @@
         <br>
 
         <input class="btn1" type="submit" value="Registrarse">
+        <div class="form-txt">
+            <a href="/usuario/login">Volver al login</a>
+        </div>
     </div>
 </form>
 </section>

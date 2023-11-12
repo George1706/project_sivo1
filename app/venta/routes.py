@@ -1,4 +1,4 @@
-from flask import redirect, render_template, request, url_for
+from flask import redirect, render_template, request, url_for,flash
 import app
 #from app.models import Venta
 from . import venta_blueprint
@@ -23,6 +23,8 @@ def registrar_Venta():
         
         app.db.session.add(venta)
         app.db.session.commit()
+        # Mensaje de registro exitoso
+        flash(f'Venta registrado correctamente', 'success')
         return redirect('/Venta/consultarVenta')
 
     return render_template('registrarVenta.html')
@@ -40,7 +42,7 @@ def actualizar_venta(id):
         venta.codigoProductoFK = request.form['codigoProductoFKActualizar']
         
         app.db.session.commit()
-        
+        flash(f'Venta con id:{venta.codigoVenta} actualizado correctamente', 'success')
         return redirect('/Venta/consultarVenta')
     
     return render_template('actualizarVenta.html', venta=venta)
@@ -54,5 +56,5 @@ def eliminar_venta(id):
     if venta:
         app.db.session.delete(venta)
         app.db.session.commit()
-    
+        flash(f'Venta con id:{venta.codigoVenta} eliminado correctamente', 'success')
     return redirect('/Venta/consultarVenta')

@@ -28,9 +28,6 @@ def registro():
             app.db.session.add(nuevo_usuario)
             app.db.session.commit()
            
-
-        
-
     return render_template('register.html')
 
 @usuario_blueprint.route('/registroAdmin', methods=['GET', 'POST'])
@@ -50,10 +47,8 @@ def registroAdmin():
             app.db.session.add(nuevo_usuario)
             app.db.session.commit()
            
-
-        
-
     return render_template('adminRegister.html')
+        
 
 #METODO PARA CERRAR SESION
 
@@ -72,7 +67,7 @@ def login():
         if usuario and usuario.claveUsuario == claveUsuario:
             if usuario.is_active:
                 login_user(usuario)
-                flash('Inicio de sesión exitoso', 'success')
+                flash(f'Inicio de sesión exitoso {usuario.nombreUsuario}', 'success')
                 return redirect(url_for('usuario_blueprint.dashboard'))
             else:
                 flash('Tu cuenta está desactivada', 'danger')
@@ -87,7 +82,7 @@ def dashboard():
     if current_user.rol.nombre_rol == 'admin':
         return render_template('menuAdministrador.html')
     elif current_user.rol.nombre_rol == 'cliente':
-        return render_template('menuCliente.html')
+        return render_template('menuClient.html')
     else:
         return "Rol no válido para el dashboard"
 

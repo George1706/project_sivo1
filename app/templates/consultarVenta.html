@@ -9,17 +9,6 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Consultar Venta</title>
 </head>
-<script type="text/javascript">
-    function confirmar(){
-        var respuesta = confirm ("Desea eliminar el producto?");
-        if(respuesta==true){
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-</script>
 <body>
     <!--Navbar-->
     <header>
@@ -83,7 +72,21 @@
 </div>
 </center>
 <center>
-    <table>
+    <div class="tabla-container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="alert alert-success">
+            <ul>
+              {% for message in messages %}
+              <li style="color: red; background-color: rgb(192, 255, 175); padding: 3%; text-align: center;">{{ message }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      {% endwith %}
+      <br>
+      <br>
+    <table class="tabla-ventas">
     <tr>
       <th>Id</th>
       <th>Fecha Venta</th>
@@ -101,16 +104,22 @@
         <td>{{ venta.codigoProductoFK }}</td>
     <td>
         <a href="/Venta/actualizarVenta/{{ venta.codigoVenta}}">Actualizar</a>
-        <a href="/Venta/eliminarVenta/{{ venta.codigoVenta }}">Eliminar</a>
+        <a href="/Venta/eliminarVenta/{{ venta.codigoVenta }}" class="eliminar" onclick="return confirm('¿Desea eliminar el registro?');">Eliminar</a>
     </td>
         </tr>
         {% endfor %}
     </table>
-
+<div class="form-txt">
     <a href="/Venta/registrarVenta">Registrar Nueva Venta</a>
-
+</div>
     </div>
 </center>
+<br>
+<br>
+<br>
+<br>
+<br>
+
     <!--Footer-->
     <section class="footer">
         <div class="footer-container container-1">

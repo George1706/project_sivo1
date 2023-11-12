@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Cliente</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="../static/assets/css/client.css">
+</head>
+<body>
+        <!--Navbar-->
+        <header>
+            <!--Nav Container-->
+            <div class="nav container">
+                <!--Menú Icon-->
+                <i class='bx bx-menu' id="menu-icon"></i>
+                <!--Logo-->
+                <a href="/index" class="logo">Luji<span>car's</span></a>
+                <!--Nav List-->
+                <ul class="navbar">
+                    <li><a href="/usuario/dashboard" class="active">Inicio</a></li>
+                    <li><a href="/menuCliente" class="active">Perfil</a></li>
+                    <li><a href="/usuario/logout" class="active">Cerrar Sesion</a></li>
+                </ul>
+                <!--Buscador-->
+                <i id="search-icon"></i>
+            </div>
+        </header>
+        <br>
+        <br>
+        <br>
+    <section class="our-publication pt-100 pb-70">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li style="color: red; background-color: rgb(192, 255, 175); padding: 3%; text-align: center;">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+        <div class="container">
+            <div class="section-header">
+                <i class="fa fa-book"></i>
+                <h2>Nuestros Productos</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod  labore et dolore magna aliqua.</p>
+            </div>
+                                <!--Partes container-->
+    <div class="parts-container">
+        <!--Box 1-->
+        <div class="box">
+            <img src="../static/assets/img/part1.png" alt="">
+            <h3>Repuesto motor</h3>
+            <span>$85.000</span>
+            <i class='bx bxs-star'>5</i>
+            <a href="#" class="btn">Comprar</a>
+
+            <div class="add-to-cart">
+                <input type="hidden" name="code"/>
+                <input type="text" class="product-quantity" name="quantity" value="1" size="2" />
+                <input type="submit" value="Añadir al carrito" class="default-btn" />
+            </div>
+        </div>
+
+        <!--Box 2-->
+        <div class="box">
+            <img src="../static/assets/img/part2.png" alt="">
+            <h3>Repuesto cilindro</h3>
+            <span>$85.000</span>
+            <i class='bx bxs-star'>5</i>
+            <a href="#" class="btn">Comprar</a>
+
+            <div class="add-to-cart">
+                <input type="hidden" name="code"/>
+                <input type="text" class="product-quantity" name="quantity" value="1" size="2" />
+                <input type="submit" value="Añadir al carrito" class="default-btn" />
+            </div>
+        </div>
+
+        <!--Box 3-->
+        <div class="box">
+            <img src="../static/assets/img/part3.png" alt="">
+            <h3>Variedades</h3>
+            <span>$85.000</span>
+            <i class='bx bxs-star'>5</i>
+            <a href="#" class="btn">Comprar</a>
+
+            <div class="add-to-cart">
+                <input type="hidden" name="code"/>
+                <input type="text" class="product-quantity" name="quantity" value="1" size="2" />
+                <input type="submit" value="Añadir al carrito" class="default-btn" />
+            </div>
+        </div>
+
+        <!--Box 4-->
+        <div class="box">
+            <img src="../static/assets/img/part4.png" alt="">
+            <h3>Repuesto aceite</h3>
+            <span>$85.000</span>
+            <i class='bx bxs-star'>5</i>
+            <a href="#" class="btn">Comprar</a>
+
+            <div class="add-to-cart">
+                <input type="hidden" name="code"/>
+                <input type="text" class="product-quantity" name="quantity" value="1" size="2" />
+                <input type="submit" value="Añadir al carrito" class="default-btn" />
+            </div>
+        </div>
+
+        <!--Box 5-->
+        <div class="box">
+            <img src="../static/assets/img/part5.png" alt="">
+            <h3>Alternador</h3>
+            <span>$85.000</span>
+            <i class='bx bxs-star'>15</i>
+            <a href="#" class="btn">Comprar</a>
+
+            <div class="add-to-cart">
+                <input type="hidden" name="code"/>
+                <input type="text" class="product-quantity" name="quantity" value="1" size="2" />
+                <input type="submit" value="Añadir al carrito" class="default-btn" />
+            </div>
+        </div>
+
+        <!--Box 6-->
+        <div class="box">
+            <img src="../static/assets/img/part6.png" alt="">
+            <h3>LLanta</h3>
+            <span>$85.000</span>
+            <i class='bx bxs-star'>5</i>
+            <a href="#" class="btn">Comprar</a>
+
+            <div class="add-to-cart">
+                <input type="hidden" name="code"/>
+                <input type="text" class="product-quantity" name="quantity" value="1" size="2" />
+                <input type="submit" value="Añadir al carrito" class="default-btn" />
+            </div>
+        </div>
+    </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!--Footer-->
+    <section class="footer">
+        <div class="footer-container container-1">
+            <div class="footer-box social">
+                <a href="/index" class="logo">Luji<span>car's</span></a>
+                 <a href="https://www.instagram.com/tienda_automotriz/?igshid=MzRlODBiNWFlZA%3D%3D"><i class='bx bxl-instagram'></i></a>
+            </div>
+            <div class="footer-box">
+                <h3>Página</h3>
+                <a href="/">Inicio</a>
+                <a href="/productos">Productos</a>
+                <a href="/nosotros">Nosotros</a>
+                <a href="/contactenos">Contáctenos</a>
+            </div>
+            <div class="footer-box">
+                <h3>Legal</h3>
+                <a href="#">Privacidad</a>
+                <a href="#">Cookies Política</a>
+            </div>
+        </div>
+    </section>
+    <!--Copyright-->
+    <div class="copyright">
+        <p>&#169; Lujicar's <span id="current-year">2023</span></p>
+    </div>
+    <!--Link deL JS-->
+    <script>
+        // Obtén el elemento del año actual del copyright
+        var yearElement = document.getElementById('current-year');
+    
+        // Obtiene el año actual
+        var currentYear = new Date().getFullYear();
+    
+        // Actualiza el contenido del elemento con el año actual
+        yearElement.textContent = currentYear;
+    </script>
+    <script src="../static/assets/js/main.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+
+</html>

@@ -10,8 +10,18 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
-
+<script>
+function confirmarEliminacion() {
+    if (confirm("¿Estás seguro de que deseas eliminar este registro?")) {
+        return true; // El registro se eliminará
+    } else {
+        // Si el usuario hace clic en "Cancelar"
+        return false; // No se eliminará el registro
+    }
+}
+</script>
 <body>
+    
     <!--Navbar-->
     <header>
         <!--Nav Container-->
@@ -50,6 +60,7 @@
                         <li><a href="#">Consultar</a></li>
                     </ul>
                 </li>
+                <li><a href="/usuario/dashboard">Menú Administrador</a></li>
             </ul>
             <!--Buscador-->
             <i id="search-icon"></i>
@@ -74,8 +85,23 @@
         </div>
         </center>
 <center>
-    <div>
-        <table>
+
+    <div class="tabla-container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="alert alert-success">
+            <ul>
+              {% for message in messages %}
+              <li style="color: red; background-color: rgb(192, 255, 175); padding: 3%; text-align: center;">{{ message }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      {% endwith %}
+      <br>
+      <br>
+    
+        <table class="tabla-productos">
                 <tr>
                     <th>Id</th>
                     <th>Nombre Producto</th>
@@ -95,14 +121,23 @@
                     <td>{{ producto.descripcionProducto }}</td>
                     <td>
                         <a href="/Producto/actualizarProducto/{{ producto.codigoProducto}}">Actualizar</a>
-                        <a href="/Producto/eliminarProducto/{{ producto.codigoProducto }}">Eliminar</a>
+                        <a href="/Producto/eliminarProducto/{{ producto.codigoProducto }}" class="eliminar" onclick="return confirm('¿Desea eliminar el registro?');">Eliminar</a>
 
                     </td>
                 </tr>
                 {% endfor %}
         </table>
+        <div class="form-txt">
+            <a href="/Producto/registrarProducto">Registrar Nuevo Producto</a>
+        </div>
     </div>
 </center>
+<br>
+<br>
+<br>
+<br>
+<br>
+
     <!--Footer-->
     <section class="footer">
         <div class="footer-container container-1">

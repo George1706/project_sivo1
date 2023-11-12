@@ -51,10 +51,17 @@
         </div>
     </header>
 
-    <section class="container hidden" id="profileSection" style="margin-top: 20px;">
 
-    </section>
     <section class="container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li style="color: red; background-color: rgb(192, 255, 175); padding: 3%; text-align: center;">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
         <div class="container__cards">
             <div class="card">
                 <div class="cover__card">

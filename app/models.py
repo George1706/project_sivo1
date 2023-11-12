@@ -13,6 +13,7 @@ class Producto(db.Model):
     unidadMedidaProducto = db.Column(db.String(25), nullable = False)
     stockProducto = db.Column(db.DECIMAL(10,2), nullable = False)
     descripcionProducto = db.Column(db.Text, nullable = False)
+    imagenProducto = db.Column(db.String(255))
 
 class RolUsuario(db.Model):
     __tablename__ = 'rol_usuario'

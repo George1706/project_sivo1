@@ -67,28 +67,31 @@
 
     <!--Registrar Producto container-->
     <section class="formulario" id="formulario">
-        <form method="POST" action="/Producto/registrarProducto">
+        <form method="POST" action="/Producto/registrarProducto" enctype="multipart/form-data">
             <h2>REGISTRAR PRODUCTO</h2>
             <br>
             <br>
             <div class="input-group">
                 <label for="nombre">Nombre Producto</label>
-                <input type="text" name="nombre"  placeholder="" required autofocus>
-
-                <label for="phone">Precio Venta Producto</label>
+                <input type="text" name="nombre" placeholder="" required autofocus>
+    
+                <label for="precio">Precio Venta Producto</label>
                 <input type="number" name="precio" placeholder="" required>
-
-                <label for="email">Unidad Medida Producto</label>
+    
+                <label for="unidad">Unidad Medida Producto</label>
                 <input type="text" name="unidad" placeholder="" required>
-
-                <label for="message">Stock Producto</label>
+    
+                <label for="cantidad">Stock Producto</label>
                 <input type="text" name="cantidad" placeholder="" required></input>
-
-                <label for="message">Descripción Producto</label>
-                <input type="text" name="descripcion" placeholder=""
-                    maxlength="300" required></input>
+    
+                <label for="descripcion">Descripción Producto</label>
+                <input type="text" name="descripcion" placeholder="" maxlength="300" required></input>
+    
+                <label for="imagen">Imagen del Producto</label>
+                <input type="file" name="imagen" accept="image/*" required>
+    
                 <br>
-
+    
                 <input class="btn1" type="submit" value="Registrar Producto">
             </div>
         </form>
