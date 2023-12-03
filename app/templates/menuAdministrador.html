@@ -51,8 +51,6 @@
         </div>
     </header>
 
-
-    <section class="container">
         {% with messages = get_flashed_messages() %}
         {% if messages %}
             <ul>
@@ -62,31 +60,28 @@
             </ul>
         {% endif %}
         {% endwith %}
-        <div class="container__cards">
-            <div class="card">
-                <div class="cover__card">
-                    <img src="../../../static/assets/img/78-786293_1240-x-1240-0-avatar-profile-icon-png.png" alt="">
+        <form action="/usuario/actualizarAdmin/{{ usuario.codigoUsuario }}" method="POST">
+            <section class="container">
+                <div class="container__cards">
+                    <div class="card">
+                        <div class="cover__card">
+                            <img src="../../../static/assets/img/78-786293_1240-x-1240-0-avatar-profile-icon-png.png" alt="">
+                        </div>
+                        <h2> ADMINISTRADOR</h2>
+                        <hr>
+                        <div class="footer__card">
+                            <label for="codigoActualizar">ID</label>
+                            <input type="number" name="codigoActualizar" id="codigoActualizar" value="{{ usuario.codigoUsuario }}" placeholder="" required readonly>
+                            <label for="nombreActualizar">NOMBRE</label>
+                            <input type="text" name="nombreActualizar" id="nombreActualizar" value="{{ usuario.nombreUsuario }}" placeholder="" required autofocus>
+                            <label for="correoActualizar">CORREO</label>
+                            <input type="email" name="correoActualizar" id="correoActualizar" value="{{ usuario.correoUsuario }}" placeholder="" required autofocus>
+                            <button class="btn1">EDITAR</button>
+                        </div>
+                    </div>
                 </div>
-                <h2>TU PERFIL</h2>
-                <hr>
-                <div class="footer__card">
-                    <h3 class="user__name">NÚMERO DE IDENTIFICACIÓN</h3>
-                    <i>01</i>
-                    <h3 class="user__name">NOMBRE</h3>
-                    <i>Samanta Duran</i>
-                    <h3 class="user__name">APELLIDO</h3>
-                    <i>Lopez Hurtado</i>
-                    <h3 class="user__name">TELÉFONO</h3>
-                    <i>3209850129</i>
-                    <h3 class="user__name">CORREO</h3>
-                    <i>Sami456@gmail.com</i>
-                    <br>
-                    <br>
-                    <button class="btn">EDITAR</button>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
+        </form>
    
     <br>
     <br>

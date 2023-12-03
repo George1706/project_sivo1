@@ -8,7 +8,7 @@ import app
 #from app.models import Material
 from . import usuario_blueprint
 from flask import flash, url_for, render_template
-
+ 
 import app
 
 @usuario_blueprint.route('/registro', methods=['GET', 'POST'])
@@ -30,6 +30,22 @@ def registro():
            
     return render_template('register.html')
 
+@usuario_blueprint.route('/actualizarUsuario/<int:id>', methods=['GET', 'POST'])
+def actualizar_usuario(id):
+    usuario = app.models.Usuario.query.get(id)
+    
+    if request.method == 'POST':
+        usuario.codigoUsuario = request.form['codigoActualizar']
+        usuario.correoUsuario = request.form['correoActualizar']
+        usuario.nombreUsuario = request.form['nombreActualizar']
+        
+        app.db.session.commit()
+        # Mensaje de actualizado exitoso
+        flash(f'Usuario con id:{usuario.codigoUsuario} actualizado correctamente', 'success')
+        return redirect('/menuCliente')
+    
+    return render_template('menuCliente.html', usuario=usuario)
+
 @usuario_blueprint.route('/registroAdmin', methods=['GET', 'POST'])
 def registroAdmin():
     if request.method == 'POST':
@@ -48,7 +64,23 @@ def registroAdmin():
             app.db.session.commit()
            
     return render_template('adminRegister.html')
+
+@usuario_blueprint.route('/actualizarAdmin/<int:id>', methods=['GET', 'POST'])
+
+def actualizar_usuario_admin(id):
+    usuario = app.models.Usuario.query.get(id)
+    
+    if request.method == 'POST':
+        usuario.codigoUsuario = request.form['codigoActualizar']
+        usuario.correoUsuario = request.form['correoActualizar']
+        usuario.nombreUsuario = request.form['nombreActualizar']
         
+        app.db.session.commit()
+        # Mensaje de actualizado exitoso
+        flash(f'Usuario con id:{usuario.codigoUsuario} actualizado correctamente', 'success')
+        return redirect('/menuAdmin')
+    
+    return render_template('menuAdministrador.html', usuario=usuario)        
 
 #METODO PARA CERRAR SESION
 
@@ -78,9 +110,10 @@ def login():
 
 @usuario_blueprint.route('/dashboard')
 @login_required
+
 def dashboard():
     if current_user.rol.nombre_rol == 'admin':
-        return render_template('menuAdministrador.html')
+        return render_template('consultarProducto.html')
     elif current_user.rol.nombre_rol == 'cliente':
         return render_template('menuClient.html')
     else:

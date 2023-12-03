@@ -33,13 +33,8 @@
     </header>
 
 
-    <section class="container hidden" id="profileSection" style="margin-top: 20px;">
-        <div class="container__cards">
-            <div class="card">
-                <!-- Contenido del perfil aquí -->
-            </div>
-        </div>
-    </section>
+
+    <form action="/usuario/actualizarUsuario/{{ usuario.codigoUsuario }}" method="POST">
     <section class="container">
         <div class="container__cards">
             <div class="card">
@@ -49,21 +44,18 @@
                 <h2>TU PERFIL</h2>
                 <hr>
                 <div class="footer__card">
-                    <h3 class="user__name">NÚMERO DE IDENTIFICACIÓN</h3>
-                    <i>01</i>
-                    <h3 class="user__name">NOMBRE</h3>
-                    <i>Samanta Duran</i>
-                    <h3 class="user__name">APELLIDO</h3>
-                    <i>Lopez Hurtado</i>
-                    <h3 class="user__name">TELÉFONO</h3>
-                    <i>3209850129</i>
-                    <h3 class="user__name">CORREO</h3>
-                    <i>Sami456@gmail.com</i>
+                    <label for="codigoActualizar">ID</label>
+                    <input type="number" name="codigoActualizar" id="codigoActualizar" value="{{ usuario.codigoUsuario }}" placeholder="" required readonly>
+                    <label for="nombreActualizar">NOMBRE</label>
+                    <input type="text" name="nombreActualizar" id="nombreActualizar" value="{{ usuario.nombreUsuario }}" placeholder="" required autofocus>
+                    <label for="correoActualizar">CORREO</label>
+                    <input type="email" name="correoActualizar" id="correoActualizar" value="{{ usuario.correoUsuario }}" placeholder="" required autofocus>
                     <button class="btn1">EDITAR</button>
                 </div>
             </div>
         </div>
     </section>
+</form>
     <br>
     <br>
     <br>
@@ -132,6 +124,8 @@
         yearElement.textContent = currentYear;
     </script>
     <script src="../static/assets/js/main.js"></script>
+
+    
 </body>
 
 </html>

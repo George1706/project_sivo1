@@ -1,6 +1,6 @@
 #Dependencia de flask
 from flask import Flask, render_template, request, redirect, url_for, session, flash,jsonify
-from flask_login import LoginManager
+from flask_login import LoginManager, current_user
 #Dependencia de configuración
 from .config import Config
 #dependencia de modelo
@@ -79,9 +79,22 @@ def terminos():
 @app.route('/politica')
 def politica():
     return render_template('politicas_de privacidad.html' )
+
+def obtener_usuario():
+    # Verificar si hay un usuario autenticado
+    if current_user.is_authenticated:
+        return current_user
+    else:
+        return None
 @app.route('/menuCliente')
 def menuCliente():
-    return render_template('menuCliente.html' )
+    usuario = obtener_usuario() 
+    return render_template('menuCliente.html', usuario=usuario)
+
+@app.route('/menuAdmin')
+def menuAdmin():
+    usuario = obtener_usuario() 
+    return render_template('menuAdministrador.html', usuario=usuario)
 
 #importar los modelos  de .models
 from .models import Producto,Usuario,Cliente,Venta,Administrador
