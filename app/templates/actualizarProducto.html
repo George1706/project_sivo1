@@ -81,6 +81,11 @@
                 <label for="nombreActualizar">Nombre Producto</label>
                 <input type="text" name="nombreActualizar" id="nombreActualizar" value="{{ producto.nombreProducto }}" placeholder="" required autofocus>
 
+                <div class="form-outline mb-4">
+                    <label for="imagenProducto">Nueva foto del producto</label>
+                    <input type="file" name="imagenProducto" class="form-control-file" accept="image/*">
+                </div>  
+
                 <label for="precioActualizar">Precio Venta Producto</label>
                 <input type="number" name="precioActualizar" id="precioActualizar" value="{{ producto.precioVentaProducto }}" placeholder="" required>
 

@@ -105,16 +105,18 @@ function confirmarEliminacion() {
                 <tr>
                     <th>Id</th>
                     <th>Nombre Producto</th>
+                    <th>Imagen</th>
                     <th>Precio Venta Producto</th>
                     <th>Unidad Medida Producto</th>
                     <th>Stock Producto</th>
                     <th>Descripcion Producto</th>
                     <th>Botones</th>
                 </tr>
-                {% for producto in producto %}
+                {% for producto in productos %}
                 <tr>
                     <td>{{ producto.codigoProducto }}</td>
                     <td>{{ producto.nombreProducto }}</td>
+                    <td><img src="{{ url_for('static', filename='imagenes_producto/'+ producto.imagenProducto) }}" class="sin_foto_mini" width="45%" height="45%" alt="{{ producto.nombre }}"></td>
                     <td>{{ producto.precioVentaProducto }}</td>
                     <td>{{ producto.unidadMedidaProducto }}</td>
                     <td>{{ producto.stockProducto }}</td>

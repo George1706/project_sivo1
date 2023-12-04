@@ -28,7 +28,6 @@ from app.usuarios import usuario_blueprint
 app.register_blueprint(cliente_blueprint)
 app.register_blueprint(usuario_blueprint)
 
-
 #Crear el objetto de Moldelos
 db = SQLAlchemy(app)
 
@@ -37,9 +36,18 @@ migrate = Migrate(app,db)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 
+def obtener_nuevo_producto():
+    # Lógica para obtener el nuevo producto desde la base de datos o cualquier fuente de datos
+    # Por ejemplo, supongamos que estás usando SQLAlchemy y quieres obtener el último producto agregado:
+    nuevo_producto = Producto.query.all()
+    return nuevo_producto
+
+
+
 @app.route('/')
 def index():
-    return render_template('index.html' )
+    nuevo_producto = obtener_nuevo_producto()
+    return render_template('index.html', nuevoProducto= nuevo_producto)
 
 @app.route('/verProducto')
 def verProducto():
